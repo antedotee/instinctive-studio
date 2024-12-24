@@ -17,7 +17,6 @@ const courseImageMap: { [key: string]: string } = {
   "cbse 11 - chemistry": "9th_science.svg",
   "cbse 12 - biology": "9th_science.svg",
   "cbse 12 - maths": "9th_maths.svg",
-  // Add other courses and their corresponding images here
 };
 
 export function StudentTable({ onAddStudent }: { onAddStudent: () => void }) {
@@ -134,16 +133,18 @@ export function StudentTable({ onAddStudent }: { onAddStudent: () => void }) {
                   hour12: true,
                 })}
               </td>
-              <td className="p-4 flex items-center justify-center">
-                <img
-                  src={
-                    student.status === "active"
-                      ? "/images/green-dot.svg"
-                      : "/images/red-dot.svg"
-                  }
-                  alt={student.status}
-                  className="w-4 h-4"
-                />
+              <td className="p-4 relative">
+                <div className="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2">
+                  <img
+                    src={
+                      student.status === "active"
+                        ? "/images/green-dot.svg"
+                        : "/images/red-dot.svg"
+                    }
+                    alt={student.status}
+                    className="w-4 h-4"
+                  />
+                </div>
               </td>
             </tr>
           ))}
