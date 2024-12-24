@@ -7,7 +7,7 @@ import setting from "../assets/settings.svg";
 
 export function Header() {
   return (
-    <div className="h-16 border-b bg-white px-6 flex items-center justify-between">
+    <div className="h-16 border-b bg-gray-50 px-6 flex items-center justify-between">
       <div className="flex items-center flex-1 space-x-4">
         <div className="relative flex-1 max-w-md">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
