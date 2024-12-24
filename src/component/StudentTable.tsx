@@ -102,7 +102,7 @@ export function StudentTable({ onAddStudent }: { onAddStudent: () => void }) {
                   {student.courses.map((course) => (
                     <div
                       key={course}
-                      className="flex items-center bg-gray-200 p-2 rounded-md"
+                      className="flex items-center bg-[#F6F8FA] p-2 rounded-md"
                     >
                       <img
                         src={`/images/${courseImageMap[course.toLowerCase()]}`}
