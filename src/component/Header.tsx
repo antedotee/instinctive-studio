@@ -1,13 +1,11 @@
-import { Search } from 'lucide-react'
-import message from '../assets/message.svg'
-import help from '../assets/help.svg'
-import notifi from '../assets/Notification.svg'
+import { Search } from "lucide-react";
+import message from "../assets/message.svg";
+import help from "../assets/help.svg";
+import notifi from "../assets/Notification.svg";
 
-
-import setting from '../assets/settings.svg'
+import setting from "../assets/settings.svg";
 
 export function Header() {
-
   return (
     <div className="h-16 border-b bg-white px-6 flex items-center justify-between">
       <div className="flex items-center flex-1 space-x-4">
@@ -22,16 +20,19 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-10">
-        <img src={help} alt='help'/>
-        <img src={message} alt='message'/>
-        <img src={setting} alt='setting'/>
-        <img src={notifi} alt='notification'/>
+        <img src={help} alt="help" />
+        <img src={message} alt="message" />
+        <img src={setting} alt="setting" />
+        <img src={notifi} alt="notification" />
         <div className="flex items-center space-x-3">
-          <div className="h-8 w-8 bg-yellow-400 rounded-lg" />
+          <img
+            src="/images/avatar-img.png"
+            alt="avatar"
+            className="h-8 w-8 rounded-lg"
+          />
           <span className="font-medium">Adeline H. Dancy</span>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
