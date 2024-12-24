@@ -8,6 +8,18 @@ import {
 import { Button } from "@/components/ui/button";
 import { useStore } from "../store/store";
 
+const courseImageMap: { [key: string]: string } = {
+  "cbse 9 - maths": "9th_maths.svg",
+  "cbse 9 - science": "9th_science.svg",
+  "cbse 10 - science": "9th_science.svg",
+  "cbse 10 - maths": "9th_maths.svg",
+  "cbse 11 - physics": "9th_science.svg",
+  "cbse 11 - chemistry": "9th_science.svg",
+  "cbse 12 - biology": "9th_science.svg",
+  "cbse 12 - maths": "9th_maths.svg",
+  // Add other courses and their corresponding images here
+};
+
 export function StudentTable({ onAddStudent }: { onAddStudent: () => void }) {
   const {
     filteredStudents,
@@ -86,7 +98,25 @@ export function StudentTable({ onAddStudent }: { onAddStudent: () => void }) {
             <tr key={student.id} className="border-b last:border-b-0">
               <td className="p-4">{student.name}</td>
               <td className="p-4">{student.cohort}</td>
-              <td className="p-4">{student.courses.join(", ")}</td>
+              <td className="p-4">
+                <div className="flex flex-wrap gap-2">
+                  {student.courses.map((course) => (
+                    <div
+                      key={course}
+                      className="flex items-center bg-gray-200 p-2 rounded-md"
+                    >
+                      <img
+                        src={`/images/${courseImageMap[course.toLowerCase()]}`}
+                        alt={course}
+                        className="w-5 h-5 mr-2"
+                      />
+                      <span className="text-sm font-medium">
+                        {course.replace(/-/g, " ")}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </td>
               <td className="p-4">
                 {new Date(student.date_joined).toLocaleDateString("en-US", {
                   year: "numeric",
